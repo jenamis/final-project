@@ -1,5 +1,4 @@
-# purifAI
-## Machine Learning for SPE Method Prediction
+# purifAI: Machine Learning for SPE Method Prediction
 
 ## Project Overview
 
@@ -21,9 +20,20 @@ The questions that will be answered through this project are:
 ## Database
 
 ## Machine Learning Model
+A [Python script in Jupyter Notebook](MachineLearning/ML_model_testing.ipynb) was developed to test the performance of the following supervised machine learning models for predicting optimal SPE method for compound purification. The selection of models for testing reflects the fact that there is a class imbalance for the target variable (SPE method).
+- Random Forest [possibly remove]
+- Balanced Random Forest
+- Easy Ensemble AdaBoost
+- Logistic Regression with Random Oversampling
+- Logistic Regression with SMOTE Oversampling
+- Logistic Regression with Random Undersampling
+- Logistic Regression with Cluster Centroids Undersampling
+- Logistic Regression with SMOTEENN Combination Over- and Undersampling
+
+Models will be tested with: (1) all compound properties from the dataset included as features in the model; and (2) only selected compound properties included as features in the model, with selection based on feature importance generated from the Balanced Random Forest model.
 
 ## Team Communication Protocol
-The project team will use the following protocol for communicating about the project: 
+The project team will use the following protocol for communicating about the project. 
 - A dedicated Slack channel that includes only team members will be used as the primary method for communication about the project.
 - Slack messages directed at a specific team member or members will include a mention for the team member(s).
 - All team members will have Slack notifications for the channel turned on so they will be alerted to new project messages. 
