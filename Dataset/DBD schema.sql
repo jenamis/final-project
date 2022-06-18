@@ -2,7 +2,7 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "Sample_outcomes" (
+CREATE TABLE "Samples_outcomes" (
     "sample_id" varchar   NOT NULL,
     "structure_id" varchar   NOT NULL,
     "preferred_lcms_method" varchar   NOT NULL,
@@ -17,13 +17,13 @@ CREATE TABLE "Sample_outcomes" (
     "termination_details" varchar   NOT NULL,
     "reaction_scale_(mmol)" float   NOT NULL,
     "selected_fractions" varchar   NOT NULL,
-    "volumn_collecteda_(ml)" float   NOT NULL,
+    "volumn_collected_(ml)" float   NOT NULL,
     "total_fractions_collected" int   NOT NULL,
     "recovered_sample_dry_mass_(mg)" float   NOT NULL,
     "precent_yield" float   NOT NULL,
     "%_purity_(by_lcms)" float   NOT NULL,
     "purification_comments" varchar   NOT NULL,
-    CONSTRAINT "pk_Sample_outcomes" PRIMARY KEY (
+    CONSTRAINT "pk_Samples_outcomes" PRIMARY KEY (
         "sample_id"
      )
 );
@@ -41,6 +41,7 @@ CREATE TABLE "Structures" (
     "qed" float   NOT NULL,
     "HeavyAtomMolWt" float   NOT NULL,
     "MolLogP" float   NOT NULL,
+    "MolMR" float   NOT NULL,
     "FractionCSP3" float   NOT NULL,
     "NumValenceElectrons" int   NOT NULL,
     "MaxPartialCharge" float   NOT NULL,
@@ -84,6 +85,6 @@ CREATE TABLE "Structures" (
      )
 );
 
-ALTER TABLE "Sample_outcomes" ADD CONSTRAINT "fk_Sample_outcomes_structure_id" FOREIGN KEY("structure_id")
+ALTER TABLE "Samples_outcomes" ADD CONSTRAINT "fk_Samples_outcomes_structure_id" FOREIGN KEY("structure_id")
 REFERENCES "Structures" ("structure_id");
 
