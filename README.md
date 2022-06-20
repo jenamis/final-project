@@ -18,7 +18,7 @@ The questions that will be answered through this project are:
 - Which machine learning model will perform best for predicting optimal SPE method for compound purification?
 
 ## Database
-A relational database (RDS) was created in Amazon Web Services (AWS), and connected to pgAdmin14. This Postgres database is hosted on the cloud which can be accessed by anyone with credentials using pgAdmin14. Data was cleaned, joined and merged by using pyspark.sql, and the cleaned data was stored in AWS S3 bucket. We call the data from S3 buckets by using pyspark from SparkFiles library.
+A relational database (RDS) was created in Amazon Web Services (AWS), and connected to pgAdmin14. This Postgres database is hosted on the cloud which can be accessed by anyone with credentials using pgAdmin14. [Data](https://github.com/jenamis/purifAI/blob/luke/database/clean_dataset.ipynb) was cleaned by pandas, and stored in AWS S3 bucket. We call the data from S3 buckets by using pyspark from SparkFiles library.
 
 ## Machine Learning Model
 A [Python script in Jupyter Notebook](MachineLearning/ML_model_testing.ipynb) was developed to test the performance of the following supervised machine learning models for predicting optimal SPE method for compound purification. The selection of models for testing reflects the fact that there is a class imbalance for the target variable (SPE method).
