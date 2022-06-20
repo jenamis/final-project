@@ -18,11 +18,10 @@ The questions that will be answered through this project are:
 - Which machine learning model will perform best for predicting optimal SPE method for compound purification?
 
 ## Database
-A relational database (RDS) was created in Amazon Web Services (AWS), and connected to pgAdmin14. This Postgres database is hosted on the cloud which can be accessed by anyone with credentials using pgAdmin14. [Data was cleaned by Pandas](https://github.com/jenamis/purifAI/blob/main/database/clean_dataset.ipynb) , and stored in AWS S3 bucket. We call the data from RDS by using SQLAlchemy. [Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png)
+A relational database (RDS) was created in Amazon Web Services (AWS), and connected to pgAdmin14. This Postgres database is hosted on the cloud, which can be accessed by anyone with credentials using pgAdmin14. [Data was cleaned by Pandas](https://github.com/jenamis/purifAI/blob/main/database/clean_dataset.ipynb), and stored in AWS S3 bucket. We call the data from RDS by using SQLAlchemy. [Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
 
 ## Machine Learning Model
-A [Python script in Jupyter Notebook](MachineLearning/ML_model_testing.ipynb) was developed to test the performance of the following supervised machine learning models for predicting optimal SPE method for compound purification. The selection of models for testing reflects the fact that there is a class imbalance for the target variable (SPE method).
-- Random Forest [possibly remove]
+A [Python script in Jupyter Notebook](MachineLearning/ML_model_testing.ipynb) was developed to test the performance of the following supervised machine learning models for predicting optimal SPE method for compound purification. The selection of models for testing reflects the fact that there is a class imbalance for the target variable (SPE method). The testing script takes in data from Amazon RDS.
 - Balanced Random Forest
 - Easy Ensemble AdaBoost
 - Logistic Regression with Random Oversampling
@@ -39,4 +38,4 @@ The project team will use the following protocol for communicating about the pro
 - Slack messages directed at a specific team member or members will include a mention for the team member(s).
 - All team members will have Slack notifications for the channel turned on so they will be alerted to new project messages. 
 - All team members will be expected to respond to Slack messages within 24 hours. If no response is received within 24 hours, communication will be re-sent via text message. 
-- Brief team meetings of 30 minutes or less will be conducted via Google Meet on Mondays, Wednesdays, and Fridays at 1pm and Tuesdays, Thursdays, and Sundays at 9pm. 
+- Brief team meetings will be conducted via Google Meet on Mondays, Wednesdays, and Fridays at 1pm and Tuesdays, Thursdays, and Sundays at 9pm. 
