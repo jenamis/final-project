@@ -21,17 +21,16 @@ The questions that will be answered through this project are:
 A relational database (RDS) was created in Amazon Web Services (AWS), and connected to pgAdmin14. This Postgres database is hosted on the cloud, which can be accessed by anyone with credentials using pgAdmin14. [Data was cleaned by Pandas](https://github.com/jenamis/purifAI/blob/main/database/clean_dataset.ipynb), and stored in AWS S3 bucket. We call the data from RDS by using SQLAlchemy. [Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
 
 ## Machine Learning Model
-A [Python script in Jupyter Notebook](MachineLearning/ML_model_testing.ipynb) was developed to test the performance of the following supervised machine learning models for predicting optimal SPE method for compound purification. The testing script takes in data from Amazon RDS.
+A [Python script in Jupyter Notebook](MachineLearning/ML_model_testing.ipynb) was developed to test the performance of the following supervised machine learning models for predicting optimal SPE method for compound purification. The selection of models for testing reflects the fact that there is a class imbalance for the target variable (SPE method). The testing script takes in data from Amazon RDS.
 - Balanced Random Forest
 - Easy Ensemble AdaBoost
-- Extreme Gradient Boosting
 - Logistic Regression with Random Oversampling
 - Logistic Regression with SMOTE Oversampling
 - Logistic Regression with Random Undersampling
 - Logistic Regression with Cluster Centroids Undersampling
 - Logistic Regression with SMOTEENN Combination Over- and Undersampling
 
-The selection of models for testing reflects the fact that there is a class imbalance for the binary target variable (SPE method). Additional models not listed may also be tested prior to selecting the final model. Models will be tested with: (1) all compound properties from the dataset included as features in the model; and (2) only selected compound properties included as features in the model, with selection based on feature importance generated from the Balanced Random Forest model.
+Models will be tested with: (1) all compound properties from the dataset included as features in the model; and (2) only selected compound properties included as features in the model, with selection based on feature importance generated from the Balanced Random Forest model.
 
 ## Team Communication Protocol
 The project team will use the following protocol for communicating about the project. 
