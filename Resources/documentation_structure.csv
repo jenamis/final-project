@@ -1,0 +1,54 @@
+﻿,Column name,Explaination / full term
+1,STRUCTURE_ID,
+2,MolWt,The average molecular weight of the molecule
+3,ExactMolWt,The exact molecular weight of the molecule
+4,logP,"Partition coefficient
+A ratio of concentrations of a compound in a mixture of two immiscible solvents at equilibrium"
+5,HBD,Hemoglobin subunit delta
+6,HBA,Hydrogen Bond Acceptor
+7,TPSA,Topological polar surface area
+8,Flexibility,
+9,Rotatable Bonds,Number of Rotatable Bonds
+10,qed,Weighted sum of ADS mapped properties
+11,HeavyAtomMolWt,Heavy Atom Molecular weight
+12,MolLogP,Wildman-Crippen LogP value
+13,MolMR,Wildman-Crippen MR value
+14,FractionCSP3,The fraction of C atoms that are SP3 hybridized
+15,NumValenceElectrons,Number of Valence Electrons
+16,MaxPartialCharge,Maximum Partial Charge
+17,MinPartialCharge,Minimal partial charge
+18,FpDensityMorgan1,"Morgan fingerprint, radius 1"
+19,BalabanJ,Balaban's J value
+20,BertzCT,"A topological index meant to quantify ""complexity"""
+21,HallKierAlpha,Hall-Kier alpha value for a molecule
+22,Ipc,The information content of the coefficients of the characteristic polynomial of the adjacency matrix of a hydrogen-suppressed graph of a molecule
+23,Kappa2,Hall-Kier Kappa2 value
+24,LabuteASA,Labute's Approximate Surface Area (ASA from MOE)
+25,PEOE_VSA10,MOE Charge VSA Descriptor 10 ( 0.10 <= x < 0.15)
+26,PEOE_VSA2,MOE Charge VSA Descriptor 2 (-0.30 <= x < -0.25)
+27,SMR_VSA10,MOE MR VSA Descriptor 10 ( 4.00 <= x < inf)
+28,SMR_VSA4,MOE MR VSA Descriptor 4 ( 2.24 <= x < 2.45)
+29,SlogP_VSA2,MOE logP VSA Descriptor 2 (-0.40 <= x < -0.20)
+30,SlogP_VSA6,MOE logP VSA Descriptor 6 ( 0.15 <= x < 0.20)
+31,MaxEStateIndex,Maximum EState index
+32,MinEStateIndex,Minimum EState index
+33,EState_VSA3,EState VSA Descriptor 3  ( 0.29 <= x < 0.72)
+34,EState_VSA8,EState VSA Descriptor 8 ( 2.05 <= x < 4.69)
+35,HeavyAtomCount,The number of heavy atoms a molecule
+36,NHOHCount,The number of NHs or Ohs
+37,NOCount,The number of Nitrogens and Oxygens
+38,NumAliphaticCarbocycles,The number of aliphatic (containing at least one non-aromatic bond) carbocycles for a molecule
+39,NumAliphaticHeterocycles,The number of aliphatic (containing at least one non-aromatic bond) heterocycles for a molecule
+40,NumAliphaticRings,The number of aliphatic (containing at least one non-aromatic bond) rings for a molecule
+41,NumAromaticCarbocycles,The number of aromatic carbocycles for a molecule
+42,NumAromaticHeterocycles,The number of aromatic heterocycles for a molecule
+43,NumAromaticRings,The number of aromatic rings for a molecule
+44,NumHAcceptors,The number of Hydrogen Bond Acceptors
+45,NumHDonors,The number of Hydrogen Bond Donors
+46,NumHeteroatoms,The number of Hydrogen Bond Donors
+47,NumRotatableBonds,The number of Rotatable Bonds
+48,NumSaturatedCarbocycles,The number of saturated carbocycles for a molecule
+49,NumSaturatedHeterocycles,The number of saturated heterocycles for a molecule
+50,NumSaturatedRings,The number of saturated rings for a molecule
+51,RingCount,Ring Count
+,,
