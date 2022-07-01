@@ -1,0 +1,2 @@
+Name,Base model Balanced Accuracy,Grid model Balanced Accuracy,Improvement
+Easy Ensemble AdaBoost,0.8797169811320755,0.8891509433962264,1.07%
