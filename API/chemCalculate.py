@@ -6,8 +6,6 @@ from rdkit.Chem import Descriptors, rdMolDescriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 
 # from mol_property import property_api
-
-
 # from rdkit.Chem import RDConfig
 # import useful_rdkit_utils
 # from useful_rdkit_utils import rdMolDescriptors, RDKitProperties, taylor_butina_clustering
@@ -31,17 +29,3 @@ smiles = "CC1CCN(CC1N(C)C2=NC=NC3=C2C=CN3)C(=O)CC#N"
 # mol = Chem.MolFromSmiles(smiles)
 # names = ['MolWt', 'ExactMolWt', 'qed', 'HeavyAtomMolWt', 'MolLogP', 'MolMR', 'FractionCSP3', 'NumValenceElectrons', 'MaxPartialCharge', 'MinPartialCharge', 'TPSA', 'FpDensityMorgan1', 'BalabanJ', 'BertzCT', 'HallKierAlpha', 'Ipc', 'Kappa2', 'LabuteASA', 'PEOE_VSA10', 'PEOE_VSA2', 'SMR_VSA10', 'SMR_VSA4', 'SlogP_VSA2', 'SlogP_VSA6','MaxEStateIndex', 'MinEStateIndex', 'EState_VSA3', 'EState_VSA8', 'HeavyAtomCount', 'NHOHCount', 'NOCount', 'NumAliphaticCarbocycles', 'NumAliphaticHeterocycles', 'NumAliphaticRings', 'NumAromaticCarbocycles', 'NumAromaticHeterocycles', 'NumAromaticRings', 'NumHAcceptors', 'NumHDonors', 'NumHeteroatoms', 'NumRotatableBonds', 'NumSaturatedCarbocycles', 'NumSaturatedHeterocycles', 'NumSaturatedRings', 'RingCount']
 descs = calculate_descriptors(smiles)
-#
-# result_df = pd.concat(descriptors, axis=1)
-<<<<<<< Updated upstream
-
-print(descs)
-# result_df.to_csv('structure-descriptors.csv')
-=======
-
-print(descs)
-# result_df.to_csv('structure-descriptors.csv')
-
-
-
->>>>>>> Stashed changes
