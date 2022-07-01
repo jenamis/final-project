@@ -33,6 +33,15 @@ smiles = "CC1CCN(CC1N(C)C2=NC=NC3=C2C=CN3)C(=O)CC#N"
 descs = calculate_descriptors(smiles)
 #
 # result_df = pd.concat(descriptors, axis=1)
+<<<<<<< Updated upstream
 
 print(descs)
 # result_df.to_csv('structure-descriptors.csv')
+=======
+
+print(descs)
+# result_df.to_csv('structure-descriptors.csv')
+
+
+
+>>>>>>> Stashed changes
