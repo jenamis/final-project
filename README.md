@@ -43,16 +43,18 @@ One set of models was developed to predict optimal SPE method for compound purif
 The ML model development scripts connected to the Amazon RDS using SQLAlchemy. An inner join between the "outcomes" and "structures" tables on the "structure_id" column was used to merge the two cleaned datasets. Since the goal of both ML models is to predict optimal methods related to compound purification, only rows where the compound successfully completed the purification stage of testing (indicated by the value "true" in the "spe_successful" column) were retained in the data for model development. For development of the LCMS ML model, the data was further limited to include only rows with one of the main LCMS methods in the "preferred_lcms_method" column (rows with the LunaOmega LpH method were excluded because it is very rarely used).
 
 Data preprocessing continued as outlined below.
-1. After the merged dataset was loaded into the model development scripts as a pandas DataFrame, all columns from the original "outcomes" dataset **except for** the structure ID ("structure_id") and columns containing the SPE or LCMS method were dropped from the DataFrame. 
+- After the merged dataset was loaded into the model development scripts as a pandas DataFrame, all columns from the original "outcomes" dataset **except for** the structure ID ("structure_id") and columns containing the SPE or LCMS method were dropped from the DataFrame. 
    - The dropped columns contained additional outcome data from the compound testing process that may be of interest for future analysis but were extraneous to the current objective of predicting optimal SPE and LCMS methods. 
-2. Duplicate rows were dropped from the DataFrame. 
+- Duplicate rows were dropped from the DataFrame. 
+   
    **For SPE ML model development:**
    - If a structure ID was tested multiple times with same SPE method, only one row was retained for that structure ID and SPE method combination.
    - If a structure ID was tested successfully with both SPE methods, rows for that structure ID with each SPE method were retained. 
+   
    **For LCMS ML model development:**
    - If a structure ID was tested multiple times with same LCMS method, only one row was retained for that structure ID and LCMS method combination.
    - If a structure ID was tested successfully with both LCMS methods, rows for that structure ID with each LCMS method were retained. 
-3. Scikit-learn's LabelEncoder module was used to transtorm the SPE or LCMS method (target) from string to numerical data. All features were already numerical. **Note:** Since transforming the method to numerical was only necessary for testing the XGBoost model, this preprocessing step was skipped when training the final saved models.
+- Scikit-learn's LabelEncoder module was used to transtorm the SPE or LCMS method (target) from string to numerical data. All features were already numerical. **Note:** Since transforming the method to numerical was only necessary for testing the XGBoost model, this preprocessing step was skipped when training the final saved models.
 
 ### Feature Engineering & Selection
 The original "structures" dataset included 45 compound properties believed to be potentially relevant for predicting the optimal SPE and LCMS methods to use for compound purification and analysis. The base version of each ML model (described under Model Testing & Training) was tested using all 45 properties as features in the model. In addition, all models except Easy Ensamble AdaBoost were tested with a subset of selected features. 
@@ -63,12 +65,12 @@ The tables below show the balanced accuracy score for the base version of each m
 
 **Comparison of Base Model Performance for Predicting SPE Method with All Features and Selected Features**
 
-[!img1](Resources/spe_features.png)
+![img1](Resources/spe_features.png)
 
 
 **Comparison of Base Model Performance for Predicting LCMS Method with All Features and Selected Features**
 
-[!img2](Resources/lcms_features.png)
+![img2](Resources/lcms_features.png)
 
 
 Since feature values ranged from less than 1 to greater than 700, scikit-learn's StandardScaler module was used to scale all features after completing the train-test split.
@@ -88,12 +90,12 @@ The tables below show a comparison of base model performance sorted from highest
 
 **Base Model Performance for Predicting SPE Method**
 
-[!img3](Resources/spe_base.png)
+![img3](Resources/spe_base.png)
 
 
 **Base Model Performance for Predicting LCMS Method**
 
-[!img4](Resources/lcms_base.png)
+![img4](Resources/lcms_base.png)
 
 
 #### Hyperparameter Tuning 
@@ -105,12 +107,12 @@ The tables below show the comparison of base and grid search model performance s
 
 **Comparison of Base and Grid Search Model Performance for Predicting SPE Method**
 
-[!img5](Resources/spe_grid.png)
+![img5](Resources/spe_grid.png)
 
 
 **Comparison of Base and Grid Search Model Performance for Predicting LCMS Method**
 
-[!img6](Resources/lcms_grid.png)
+![img6](Resources/lcms_grid.png)
 
 
 ### Final Model Selection & Performance
@@ -119,7 +121,7 @@ Balanced Random Forest was selected as the algorithm for the final ML models for
 #### SPE ML Model
 Although several models had similar best balanced accuracy scores for predicting SPE method, Balance Random Forest was selected for this model due to its slightly higher score. The hyperparameters for the final model are shown below.
 
-[!img7](Resources/spe_final_params.png)
+![img7](Resources/spe_final_params.png)
 
 
 Performance metrics for the model are shown and explained below. 
@@ -129,13 +131,13 @@ Performance metrics for the model are shown and explained below.
 - Recall for Predicting MCX: When the method was actually MCX, the model correctly predicted it as such **90%** of the time.
 - Recall for Predicting  HLB: When the method was actually HLB, the model correctly predicted it as such **92%** of the time. 
 
-[!img8](Resources/spe_performance.png)
+![img8](Resources/spe_performance.png)
 
 
 #### LCMS ML Model
 Although XGBoost had a slightly higher best balanced accuracy score than Balanced Random Forest for predicting LCMS method, the difference was negligable and Balanced Random Forest was selected for this model to be consistent with the SPE model. The default hyperparameters used for the base version of the model were used for the final model since performance did not improve through hyperparameter tuning. They are shown below. 
 
-[!img9](Resources/spe_final_params.png)
+![img9](Resources/lcms_final_params.png)
 
 
 Performance metrics for the model are shown and explained below. 
@@ -145,13 +147,13 @@ Performance metrics for the model are shown and explained below.
 - Recall for Predicting Xbridge: When the method was actually Xbridge, the model correctly predicted it as such **89%** of the time.
 - Recall for Predicting  Gemini: When the method was actually Gemini, the model correctly predicted it as such **87%** of the time. 
 
-[!img8](Resources/spe_performance.png)
+![img10](Resources/lcms_performance.png)
 
 
 In general, Balanced Random Forest has several benefits that make it a strong choice for these models.
 - It is ideal for use with imbalanced classes like SPE method and LCMS method.
 - It is not prone to overfitting since it uses a combination of several "weak learner" trees.
-- It can run efficiently with larget datasets. 
+- It can run efficiently with large datasets. 
 
 ## Team Communication Protocol
 The project team will use the following protocol for communicating about the project. 
