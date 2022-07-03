@@ -63,12 +63,12 @@ The original "structures" dataset included 45 compound properties believed to be
 
 The tables below show the balanced accuracy score for the base version of each model with all features included compared with only selected features. Model versions with selected features performed worse or only slightly better than the versions with all features, indicating that the full set of 45 features did not contain extraneous features creating significant "noise" in the model. Additionally, none of the models using only a subset of selected features had a higher balanced accuracy score than the best performing model using all features. Therefore, all features were retained when model testing advanced to the hyperparameter tuning stage.
 
-*Comparison of Base Model Performance for Predicting SPE Method with All Features and Selected Features*
+_**Comparison of Base Model Performance for Predicting SPE Method with All Features and Selected Features**_
 
 ![img1](Resources/spe_features.png)
 
 
-*Comparison of Base Model Performance for Predicting LCMS Method with All Features and Selected Features*
+_**Comparison of Base Model Performance for Predicting LCMS Method with All Features and Selected Features**_
 
 ![img2](Resources/lcms_features.png)
 
@@ -88,12 +88,12 @@ Base versions of the ML algorithms and resampling methods listed above were test
 
 The tables below show a comparison of base model performance sorted from highest to lowest balanced accuracy score. Balanced Random Forest was the best performing model both for predicting SPE method and for predicting LCMS method.
 
-*Base Model Performance for Predicting SPE Method*
+_**Base Model Performance for Predicting SPE Method**_
 
-<img3 src="Resources/spe_base.png" style="zoom: 50%;"/>
+<img src="Resources/spe_base.png" alt="spe_base" style="zoom: 50%;"/>
 
 
-*Base Model Performance for Predicting LCMS Method*
+_**Base Model Performance for Predicting LCMS Method**_
 
 ![img4](Resources/lcms_base.png)
 
@@ -105,12 +105,12 @@ Hyperparameter tuning was performed for all of the ML algorithms listed above.
 
 The tables below show the comparison of base and grid search model performance sorted from highest to lowest balanced accuracy score after hyperparameter tuning. For predicting SPE method, Balanced Random Forest remained the best performing model. For predicting LCMS method, XGBoost had the highest balanced accuracy score after hyperparameter tuning. 
 
-*Comparison of Base and Grid Search Model Performance for Predicting SPE Method*
+_**Comparison of Base and Grid Search Model Performance for Predicting SPE Method**_
 
 ![img5](Resources/spe_grid.png)
 
 
-*Comparison of Base and Grid Search Model Performance for Predicting LCMS Method*
+_**Comparison of Base and Grid Search Model Performance for Predicting LCMS Method**_
 
 ![img6](Resources/lcms_grid.png)
 
