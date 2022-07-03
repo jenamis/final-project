@@ -65,12 +65,12 @@ The tables below show the balanced accuracy score for the base version of each m
 
 _**Comparison of Base Model Performance for Predicting SPE Method with All Features and Selected Features**_
 
-![img1](Resources/spe_features.png)
+<img src="Resources/spe_features.png" height="250">
 
 
 _**Comparison of Base Model Performance for Predicting LCMS Method with All Features and Selected Features**_
 
-![img2](Resources/lcms_features.png)
+<img src="Resources/lcms_features.png" height="250">
 
 
 Since feature values ranged from less than 1 to greater than 700, scikit-learn's StandardScaler module was used to scale all features after completing the train-test split.
@@ -90,12 +90,12 @@ The tables below show a comparison of base model performance sorted from highest
 
 _**Base Model Performance for Predicting SPE Method**_
 
-<img src="Resources/spe_base.png" width="200">
+<img src="Resources/spe_base.png" height="250">
 
 
 _**Base Model Performance for Predicting LCMS Method**_
 
-![img4](Resources/lcms_base.png)
+<img src="Resources/lcms_base.png" height="250">
 
 
 #### Hyperparameter Tuning 
@@ -107,12 +107,12 @@ The tables below show the comparison of base and grid search model performance s
 
 _**Comparison of Base and Grid Search Model Performance for Predicting SPE Method**_
 
-![img5](Resources/spe_grid.png)
+<img src="Resources/spe_grid.png" height="250">
 
 
 _**Comparison of Base and Grid Search Model Performance for Predicting LCMS Method**_
 
-![img6](Resources/lcms_grid.png)
+<img src="Resources/lcms_grid.png" height="250">
 
 
 ### Final Model Selection & Performance
