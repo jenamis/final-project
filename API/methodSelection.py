@@ -3,9 +3,10 @@ from sklearn.model_selection import train_test_split
 from chemCalculate import calculate_descriptors
 import pickle
 class model_selection:
-    def __init__(self, saved_spe_model = None, saved_spe_scaler= None,
-                 saved_lcms_model = None, saved_lcms_scaler= None):
-        
+    def __init__(self, saved_spe_model = 'API/spe_brf_model.pkl', 
+                 saved_spe_scaler= 'API/spe_scaler.pkl',
+                 saved_lcms_model = 'API/lcms_brf_model.pkl',
+                 saved_lcms_scaler= 'API/lcms_scaler.pkl'):
         #if the saved_model is not empty load the saved_model to self.model
         if saved_spe_model != None:
             self.spe_model = pickle.load(open(saved_spe_model,'rb'))
@@ -42,8 +43,7 @@ class model_selection:
         return y
     
 if __name__ == '__main__':
-    model_object = model_selection('spe_brf_model.pkl', 'spe_scaler.pkl', 
-                       'lcms_brf_model.pkl','lcms_scaler.pkl')
+    model_object = model_selection()
     smiles = "CC1CCN(CC1N(C)C2=NC=NC3=C2C=CN3)C(=O)CC#N"
     descs = [calculate_descriptors(smiles)]
     print(f'The SPE method you should use is : {model_object.RunSPEPrediction(smiles)}')
