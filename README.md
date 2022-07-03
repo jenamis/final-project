@@ -90,7 +90,7 @@ The tables below show a comparison of base model performance sorted from highest
 
 _**Base Model Performance for Predicting SPE Method**_
 
-<img src="Resources/spe_base.png" alt="spe_base" style="zoom: 50%;"/>
+<img src="Resources/spe_base.png" alt="spe_base" style="zoom: 50%;" />
 
 
 _**Base Model Performance for Predicting LCMS Method**_
