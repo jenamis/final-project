@@ -121,7 +121,7 @@ Balanced Random Forest was selected as the algorithm for the final ML models for
 #### SPE ML Model
 Although several models had similar best balanced accuracy scores for predicting SPE method, Balance Random Forest was selected for this model due to its slightly higher score. The hyperparameters for the final model are shown below.
 
-![img7](Resources/spe_final_params.png)
+<img src="Resources/spe_final_params.png" width="400">
 
 
 Performance metrics for the model are shown and explained below. 
@@ -137,7 +137,7 @@ Performance metrics for the model are shown and explained below.
 #### LCMS ML Model
 Although XGBoost had a slightly higher best balanced accuracy score than Balanced Random Forest for predicting LCMS method, the difference was negligable and Balanced Random Forest was selected for this model to be consistent with the SPE model. The default hyperparameters used for the base version of the model were used for the final model since performance did not improve through hyperparameter tuning. They are shown below. 
 
-![img9](Resources/lcms_final_params.png)
+<img src="Resources/lcms_final_params.png" width="500">
 
 
 Performance metrics for the model are shown and explained below. 
