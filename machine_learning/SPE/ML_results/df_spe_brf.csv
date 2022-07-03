@@ -1,0 +1,2 @@
+Name,Base model Balanced Accuracy,Grid model Balanced Accuracy,Improvement
+Balanced Random Forest,0.8962264150943396,0.9103773584905661,1.58%
