@@ -17,7 +17,7 @@ The second dataset includes the status of testing for each compound and the SPE 
 
 ### Data ETL Process
 
-![The Data ETL Pipeline used for this project](https://github.com/jenamis/purifAI/Resources/PurifAI_ETL_pipeline.png)
+![The Data ETL Pipeline used for this project](https://github.com/jenamis/purifAI/blob/ff9b396f0d10a8dccb29650a1c20916a1c54dd8e/Resources/PurifAI_ETL_pipeline.png)
 
 
 1. Raw data is extracted from chemistry platform database as CSV files. These are accessible from AWS S3 buckets:
@@ -27,7 +27,7 @@ The second dataset includes the status of testing for each compound and the SPE 
    - https://purifai.s3.us-west-1.amazonaws.com/clean-data/cleaned-outcomes.csv
    - https://purifai.s3.us-west-1.amazonaws.com/clean-data/cleaned-structures.csv
 3. Data is loaded into the AWS database (*purifai.ceoinb9nwfxg.us-west-1.rds.amazonaws.com*) using PySpark using this file [purifAI_database.ipynb](database/purifAI_database.ipynb).
-4. 
+
 [Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
 
 5. Data for SPE analysis is extracted as a merged table (`spe_analysis_df`) using SQLAlchemy and pandas. This dataframe for analysis is obtained using the code from [spe_analysis_data.ipynb](database/spe_analysis_data.ipynb).
