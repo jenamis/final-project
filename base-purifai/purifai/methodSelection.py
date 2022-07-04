@@ -42,11 +42,12 @@ class model_selection:
             names = [d[0] for d in Descriptors._descList]
         calc = MoleculeDescriptors.MolecularDescriptorCalculator(names)
         descs = [calc.CalcDescriptors(mol)]
-        # descs_df = pd.DataFrame(descs, columns=names)
-        # print(descs_df)
-        # if 'Ipc' in names and ipc_avg:
-        #     descs['Ipc'] = Descriptors.Ipc(mol, avg=True)
-        return descs
+        descs_df = pd.DataFrame(descs, columns=names)
+        print(descs_df)
+        if 'Ipc' in names and ipc_avg:
+            descs['Ipc'] = Descriptors.Ipc(mol, avg=True)
+        return descs_df
+    
     def RunSPEPrediction(self, smiles):
         features = self.calculate_descriptors(smiles)
         features_scaled = self.spe_scaler.transform(features)

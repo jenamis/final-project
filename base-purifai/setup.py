@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2' 
+VERSION = '0.0.3' 
 DESCRIPTION = 'purifai'
 LONG_DESCRIPTION = 'Machine Learning for solid phase extraction Method Prediction'
 
