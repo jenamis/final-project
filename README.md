@@ -171,6 +171,11 @@ In general, Balanced Random Forest has several benefits that make it a strong ch
 - It is not prone to overfitting since it uses a combination of several "weak learner" trees.
 - It can run efficiently with large datasets. 
 
+### Dashboard
+Using a flask template, the team will create a web application that will allow users the ability to input a chemical compound in which the machine learning will predict the best SPE and LCMS method to test for purification and analysis. It will be hosted using HTML/CSS. Tableau will also be integrated to create a fully functioning and interactive dashboard that gives the users the ability to compare certain features to SPE and LCMS methods. Users will also be able to see which features have the highest importance level. 
+
+[Tableau Webpage](https://public.tableau.com/views/TestingSPEandLCMSMethods/Dashboard72?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+
 ## Team Communication Protocol
 The project team will use the following protocol for communicating about the project. 
 - A dedicated Slack channel that includes only team members will be used as the primary method for communication about the project.
