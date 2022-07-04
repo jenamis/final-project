@@ -9,9 +9,28 @@ This project will develop two machine learning models.
 
 ### Reason for Selection
 The team at an automated chemistry platform that works to automate the process of making small chemical compounds to be used in research and development for medicinal purposes is seeking machine learning models that can be used to select the best SPE and LCMS methods to test for purification and analysis of each chemical compound in a large library of compounds. Without machine learning models that can effectively predict the optimal SPE and LCMS methods to use, the team must make a best guess of which methods to test based on a subset of properties of each compound’s structure. This process can be time consuming and expensive, especially if the wrong SPE and/or LCMS method(s) end up being selected and testing must be repeated using other methods. Development of these two machine learning models has the potential to improve the time and cost efficiency of the automated chemistry platform’s process. 
-
 ### Data Source
-This project utilizes datasets provided by the data team at the automated chemistry platform. The first dataset lists compounds tested by the platform over the past two years and includes compound properties such as molecular weight, topological polar surface area (TPSA), quantitative estimate of drug-likeness (QED), among many others that may be relevant to predicting the appropriate SPE and LCMS methods to use for compound purification and analysis. The second dataset includes the status of testing for each compound and the SPE and LCMS methods used for each compound that has completed the purification stage. Each compound is identified by a unique structure ID, and proprietary information about the actual structure of the compound has been excluded from the datasets.
+
+This project utilizes datasets provided by the data team at the automated chemistry platform. The first dataset lists compounds tested by the platform over the past two years and includes compound properties such as molecular weight, topological polar surface area (TPSA), quantitative estimate of drug-likeness (QED), among many others that may be relevant to predicting the appropriate SPE method to use for compound purification. These are calculated using RDkit from input SMILES string. The file for these calculations can be found at [chemCalculate.py](database/chemCalculate.py).
+
+The second dataset includes the status of testing for each compound and the SPE method used for each compound that has completed the purification stage. Each compound is identified by a unique structure ID, and proprietary information about the actual structure of the compound has been excluded from the datasets.
+
+### Data ETL Process
+
+![The Data ETL Pipeline used for this project](https://github.com/jenamis/purifAI/Resources/PurifAI_ETL_pipeline.png)
+
+
+1. Raw data is extracted from chemistry platform database as CSV files. These are accessible from AWS S3 buckets:
+   - https://purifai.s3.us-west-1.amazonaws.com/data/outcomes.csv
+   - https://purifai.s3.us-west-1.amazonaws.com/data/structures.csv
+2. Data is transformed and cleaned using pandas in this file [clean_dataset.ipynb](database/clean_dataset.ipynb) and generates new CSV files. These were uploaded to and are accessible from AWS S3 buckets:
+   - https://purifai.s3.us-west-1.amazonaws.com/clean-data/cleaned-outcomes.csv
+   - https://purifai.s3.us-west-1.amazonaws.com/clean-data/cleaned-structures.csv
+3. Data is loaded into the AWS database (*purifai.ceoinb9nwfxg.us-west-1.rds.amazonaws.com*) using PySpark using this file [purifAI_database.ipynb](database/purifAI_database.ipynb).
+4. 
+[Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
+
+5. Data for SPE analysis is extracted as a merged table (`spe_analysis_df`) using SQLAlchemy and pandas. This dataframe for analysis is obtained using the code from [spe_analysis_data.ipynb](database/spe_analysis_data.ipynb).
 
 ### Questions to Answer
 The questions that will be answered through this project are:
@@ -21,9 +40,6 @@ The questions that will be answered through this project are:
 - Which properties of a compound’s structure are relevant to include as features in a machine learning model to predict the optimal LCMS method for compound analysis?
 - Can a machine learning model be developed that has sufficiently high accuracy, precision, and sensitivity for predicting optimal LCMS method for compound analysis?
 - Which machine learning model will perform best for predicting optimal LCMS method for compound analysis?
-
-## Database
-A relational database (RDS) was created in Amazon Web Services (AWS), and connected to pgAdmin14. This Postgres database is hosted on the cloud, which can be accessed by anyone with credentials using pgAdmin14. [Data was cleaned by Pandas](https://github.com/jenamis/purifAI/blob/main/database/clean_dataset.ipynb), and stored in AWS S3 bucket. We call the data from RDS by using SQLAlchemy. [Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
 
 ## Machine Learning Model
 Python scripts with Pandas in Jupyter Notebook were used to test the performance of supervised machine learning (ML) models using the following algorithms and resampling methods:
