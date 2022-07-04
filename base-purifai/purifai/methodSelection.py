@@ -51,6 +51,7 @@ class model_selection:
     def RunSPEPrediction(self, smiles):
         features = self.calculate_descriptors(smiles)
         features_scaled = self.spe_scaler.transform(features)
+        
         y = self.spe_model.predict(features_scaled)
         return y
     
