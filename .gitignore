@@ -134,3 +134,4 @@ dmypy.json
 .env
 config.py
 config*
+/app/app_log_files/

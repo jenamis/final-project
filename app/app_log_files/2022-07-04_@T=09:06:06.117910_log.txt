@@ -1,0 +1,234 @@
+data
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  369.208  368.044296  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  369.208  368.044296  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  376.247  375.065365  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  376.247  375.065365  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  353.209  352.049381  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  353.209  352.049381  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  351.233  350.058883  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  351.233  350.058883  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  352.265  351.090518  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  352.265  351.090518  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  374.271  373.074868  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  374.271  373.074868  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  338.238  337.074868  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  338.238  337.074868  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  383.235  382.059946  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  383.235  382.059946  ...                  1          3
+
+[1 rows x 45 columns]
+    MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  365.26  364.074533  ...                  1          3
+
+[1 rows x 45 columns]
+    MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  365.26  364.074533  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  356.297  355.121818  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  356.297  355.121818  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  402.281  401.069782  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  402.281  401.069782  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  366.248  365.069782  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  366.248  365.069782  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  392.286  391.085432  ...                  2          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  392.286  391.085432  ...                  2          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  393.274  392.080681  ...                  2          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  393.274  392.080681  ...                  2          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  353.209  352.049381  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  353.209  352.049381  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  375.259  374.070116  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  375.259  374.070116  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  386.666   385.01516  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  386.666   385.01516  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  352.221  351.054132  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  352.221  351.054132  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  353.209  352.049381  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  353.209  352.049381  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  367.236  366.065031  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  367.236  366.065031  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  383.235  382.059946  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  383.235  382.059946  ...                  1          3
+
+[1 rows x 45 columns]
+    MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  342.27  341.106168  ...                  2          3
+
+[1 rows x 45 columns]
+    MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  342.27  341.106168  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  340.254  339.090518  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  340.254  339.090518  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  356.297  355.121818  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  356.297  355.121818  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  356.297  355.121818  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  356.297  355.121818  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  350.249  349.074868  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  350.249  349.074868  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  364.223  363.071674  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  364.223  363.071674  ...                  2          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  378.303  377.106168  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  378.303  377.106168  ...                  1          3
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  376.287  375.090518  ...                  1          4
+
+[1 rows x 45 columns]
+     MolWt  ExactMolWt  ...  NumSaturatedRings  RingCount
+0  376.287  375.090518  ...                  1          4
+
+[1 rows x 45 columns]
+Application completed without errors.
