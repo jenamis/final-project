@@ -1,2 +1,0 @@
-Name,Base model Balanced Accuracy,Grid model Balanced Accuracy,Improvement
-XGBoost,0.8630852842809364,0.8857998885172798,2.63%
