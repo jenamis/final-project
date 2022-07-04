@@ -16,7 +16,7 @@ The second dataset includes the status of testing for each compound and the SPE 
 
 ### Data ETL Process
 
-[The Data ETL Pipeline used for this project](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
+![The Data ETL Pipeline used for this project](https://github.com/jenamis/purifAI/Resources/PurifAI_ETL_pipeline.png)
 
 
 1. Raw data is extracted from chemistry platform database as CSV files. These are accessible from AWS S3 buckets:
