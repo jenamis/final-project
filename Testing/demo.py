@@ -7,25 +7,25 @@ import wget
 cwd = os.getcwd()
 url = 'https://github.com/jenamis/purifAI/raw/main/machine_learning/SPE/models/'
 if not os.path.exists(os.getcwd() + '/spe_brf_model.pkl'):
-    wget.download(url+ 'spe_brf_model.pkl')
+    wget.download(url+ 'spe_xgb_model.pkl')
 if not os.path.exists(os.getcwd() + '/spe_scaler.pkl'):
     wget.download(url+ 'spe_scaler.pkl')
 url= 'https://github.com/jenamis/purifAI/raw/main/machine_learning/LCMS/models/'
 if not os.path.exists(os.getcwd() + '/lcms_brf_model.pkl'):
-    wget.download(url+ 'lcms_brf_model.pkl')
+    wget.download(url+ 'lcms_xgb_model.pkl')
 if not os.path.exists(os.getcwd() + '/lcms_scaler.pkl'):
     wget.download(url+ 'lcms_scaler.pkl')
 
 # define the file path
-spe_brf_model = cwd + '/spe_brf_model.pkl'
+spe_xgb_model = cwd + '/spe_xgb_model.pkl'
 spe_scaler = cwd + '/spe_scaler.pkl'
-lcms_brf_model = cwd + '/lcms_brf_model.pkl'
+lcms_xgb_model = cwd + '/lcms_xgb_model.pkl'
 lcms_scaler = cwd + '/lcms_scaler.pkl'
 
 # load the function
-model_predictor = model_selection(spe_brf_model, 
+model_predictor = model_selection(spe_xgb_model, 
                             spe_scaler,
-                            lcms_brf_model,
+                            lcms_xgb_model,
                             lcms_scaler)
 
 # define the input smiles
