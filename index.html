@@ -24,7 +24,6 @@
     <li><a class="active" href="#purifAI">purifAI</a></li>
     <li><a class="active" href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 
 <div id="page">
@@ -35,27 +34,14 @@
           <span style="color: #294b5b; font-size:70px; font-family: Garamond, serif;">purif</span>
           <span style="color: #87c0da; font-size:70px; font-family: Garamond, serif;">AI</span>
       </h1>
-        <p style="color: rgb(102, 102, 188);font-size:18px;">Use the interactive charts below to explore the dataset</p> 
-        <br>
-      </br>
+        <br></br>
       </center>
     </div>
     </div>
   </div>
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'smiles')">SMILES</button>
   <button class="tablinks" onclick="openCity(event, 'spe_lcms')">SPE & LCMS</button>
-</div>
-
-<div id="smiles" class="tabcontent">
-  <center>
-    <br></br>
-    <h1>File Upload</h1>
-    <form method="POST" action="" enctype="multipart/form-data">
-      <p><input type="file" name="file"></p>
-      <p><input type="submit" value="Submit"></p>
-    </form>
-   <center>
+  <button class="tablinks" onclick="openCity(event, 'smiles')">SMILES</button>
 </div>
 
 <div id="spe_lcms" class="tabcontent">
@@ -80,6 +66,19 @@
       </script>
 </div>
 
+<div id="smiles" class="tabcontent">
+  <center>
+    <br></br>
+    <h1>File Upload</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+   <center>
+</div>
+
+
+
 <script>
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
@@ -89,12 +88,13 @@ function openCity(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    tablinks[i].className = tablinks[i].className.replace("active", "");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
 }
 </script>
+
+
 
  
 </body>
