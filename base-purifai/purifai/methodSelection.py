@@ -1,3 +1,4 @@
+from importlib.util import spec_from_file_location
 from imblearn.ensemble import BalancedRandomForestClassifier
 from sklearn.model_selection import train_test_split
 import os
@@ -7,6 +8,8 @@ from rdkit import Chem
 from rdkit.Chem import Descriptors, rdMolDescriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 import pickle
+import os
+import wget
 class model_selection:
     def __init__(self, 
                  saved_spe_model , 
@@ -66,11 +69,29 @@ class model_selection:
     
 if __name__ == '__main__':
     smiles = "CC1CCN(CC1N(C)C2=NC=NC3=C2C=CN3)C(=O)CC#N"
-    model_object = model_selection('/Users/yycheung/Analysis project/purifAI/base-purifai/purifai/spe_brf_model.pkl', 
-                 '/Users/yycheung/Analysis project/purifAI/base-purifai/purifai/spe_scaler.pkl',
-                 '/Users/yycheung/Analysis project/purifAI/base-purifai/purifai/lcms_brf_model.pkl',
-                 '/Users/yycheung/Analysis project/purifAI/base-purifai/purifai/lcms_scaler.pkl')
-    descs = [model_object.calculate_descriptors(smiles)]
+    cwd = os.getcwd()
+    url = 'https://github.com/jenamis/purifAI/raw/main/machine_learning/SPE/models/'
+    if not os.path.exists(os.getcwd() + '/spe_brf_model.pkl'):
+        wget.download(url+ 'spe_brf_model.pkl')
+    if not os.path.exists(os.getcwd() + '/spe_scaler.pkl'):
+        wget.download(url+ 'spe_scaler.pkl')
+    url= 'https://github.com/jenamis/purifAI/raw/main/machine_learning/LCMS/models/'
+    if not os.path.exists(os.getcwd() + '/lcms_brf_model.pkl'):
+        wget.download(url+ 'lcms_brf_model.pkl')
+    if not os.path.exists(os.getcwd() + '/lcms_scaler.pkl'):
+        wget.download(url+ 'lcms_scaler.pkl')
+    spe_brf_model = cwd + '/spe_brf_model.pkl'
+    spe_scaler = cwd + '/spe_scaler.pkl'
+    lcms_brf_model = cwd + '/lcms_brf_model.pkl'
+    lcms_scaler = cwd + '/lcms_scaler.pkl'
+
+    model_predictor = model_selection(spe_brf_model, 
+                                spe_scaler,
+                                lcms_brf_model,
+                                lcms_scaler)
     
-    print(f'The SPE method you should use is : {model_object.RunSPEPrediction(smiles)}')
-    print(f'The LCMS method you should use is : {model_object.RunLCMSPrediction(smiles)}')
+    model_selection = model_selection(spe_brf_model,spe_scaler, lcms_brf_model, lcms_scaler)
+    descs = [model_selection.calculate_descriptors(smiles)]
+    
+    print(f'The SPE method you should use is : {model_selection.RunSPEPrediction(smiles)}')
+    print(f'The LCMS method you should use is : {model_selection.RunLCMSPrediction(smiles)}')
