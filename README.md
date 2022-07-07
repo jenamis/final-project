@@ -168,12 +168,12 @@ Although Balanced Random Forest had a slightly higher best balanced accuracy sco
 
 ***XGBoost Performance Metrics***
 
-<img src="Resources/spe_performance_xgb.png" width="600"> 
+<img src="Resources/spe_performance_xgb.png" width="650"> 
 
 
 ***Balanced Random Forest Performance Metrics***
 
-<img src="Resources/spe_performance_brf.png" width="600">
+<img src="Resources/spe_performance_brf.png" width="650">
 
 
 Performance metrics for the selected XGBoost model are explained below. 
@@ -194,12 +194,12 @@ XGBoost and Balanced Random Forest had nearly equal best balanced accuracy score
 
 ***XGBoost Performance Metrics***
 
-<img src="Resources/lcms_performance_xgb.png" width="600"> 
+<img src="Resources/lcms_performance_xgb.png" width="650"> 
 
 
 ***Balanced Random Forest Performance Metrics***
 
-<img src="Resources/lcms_performance_brf.png" width="600">
+<img src="Resources/lcms_performance_brf.png" width="650">
 
 
 Performance metrics for the selected XGBoost model are explained below.  
