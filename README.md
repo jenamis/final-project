@@ -94,12 +94,12 @@ The tables below show the balanced accuracy score (abbreviated BA) and F1 score 
 
 ***Comparison of Base Model Performance for Predicting SPE Method with All Features and Selected Features***
 
-<img src="Resources/spe_features.png" height="200">
+<img src="Resources/spe_features.png" height="225">
 
 
 ***Comparison of Base Model Performance for Predicting LCMS Method with All Features and Selected Features***
 
-<img src="Resources/lcms_features.png" height="200">
+<img src="Resources/lcms_features.png" height="225">
 
 
 Since feature values ranged from less than 1 to greater than 700, scikit-learn's `StandardScaler` module was used to scale all features after completing the train-test split.
@@ -119,12 +119,12 @@ The tables below show a comparison of base model performance sorted from highest
 
 ***Base Model Performance for Predicting SPE Method***
 
-<img src="Resources/spe_base.png" height="200">
+<img src="Resources/spe_base.png" height="225">
 
 
 ***Base Model Performance for Predicting LCMS Method***
 
-<img src="Resources/lcms_base.png" height="200">
+<img src="Resources/lcms_base.png" height="225">
 
 
 #### Hyperparameter Tuning 
@@ -152,12 +152,12 @@ For all models, the balanced accuracy and F1 scores for the version with the bes
 
 ***Comparison of Base and Grid Search Model Performance for Predicting SPE Method***
 
-<img src="Resources/spe_grid.png" height="200">
+<img src="Resources/spe_grid.png" height="225">
 
 
 ***Comparison of Base and Grid Search Model Performance for Predicting LCMS Method***
 
-<img src="Resources/lcms_grid.png" height="200">
+<img src="Resources/lcms_grid.png" height="225">
 
 ### Final Model Selection & Performance
 
@@ -168,12 +168,12 @@ Although Balanced Random Forest had a slightly higher best balanced accuracy sco
 
 ***XGBoost Performance Metrics***
 
-<img src="Resources/spe_performance_xgb.png"> 
+<img src="Resources/spe_performance_xgb.png" width="600"> 
 
 
 ***Balanced Random Forest Performance Metrics***
 
-<img src="Resources/spe_performance_brf.png">
+<img src="Resources/spe_performance_brf.png" width="600">
 
 
 Performance metrics for the selected XGBoost model are explained below. 
@@ -185,7 +185,7 @@ Performance metrics for the selected XGBoost model are explained below.
 
 The default hyperparameters used for the base version of the model were used for the final model since performance did not improve through hyperparameter tuning. They are shown below.
 
-<img src="Resources/spe_final_params.png" width="500">
+<img src="Resources/spe_final_params.png" width="450">
 
 
 #### LCMS ML Model
@@ -194,12 +194,12 @@ XGBoost and Balanced Random Forest had nearly equal best balanced accuracy score
 
 ***XGBoost Performance Metrics***
 
-<img src="Resources/lcms_performance_xgb.png"> 
+<img src="Resources/lcms_performance_xgb.png" width="600"> 
 
 
 ***Balanced Random Forest Performance Metrics***
 
-<img src="Resources/lcms_performance_brf.png">
+<img src="Resources/lcms_performance_brf.png" width="600">
 
 
 Performance metrics for the selected XGBoost model are explained below.  
