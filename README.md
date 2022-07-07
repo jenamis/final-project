@@ -75,9 +75,11 @@ Data preprocessing continued as outlined below.
 - After the merged dataset was loaded into the model development scripts as a pandas DataFrame, all columns from the original `outcomes` dataset **except for** the structure ID (`structure_id`) and columns containing the SPE or LCMS method were dropped from the DataFrame. 
    - The dropped columns contained additional outcome data from the compound testing process that may be of interest for future analysis but were extraneous to the current objective of predicting optimal SPE and LCMS methods. 
 - Duplicate rows were dropped from the DataFrame. 
+   
    **For SPE ML model development:**
    - If a structure ID was tested multiple times with same SPE method, only one row was retained for that structure ID and SPE method combination.
    - If a structure ID was tested successfully with both SPE methods, rows for that structure ID with each SPE method were retained. 
+   
    **For LCMS ML model development:**
    - If a structure ID was tested multiple times with same LCMS method, only one row was retained for that structure ID and LCMS method combination.
    - If a structure ID was tested successfully with both LCMS methods, rows for that structure ID with each LCMS method were retained. 
@@ -92,12 +94,12 @@ The tables below show the balanced accuracy score (abbreviated BA) and F1 score 
 
 ***Comparison of Base Model Performance for Predicting SPE Method with All Features and Selected Features***
 
-<img src="Resources/spe_features.png" height="250">
+<img src="Resources/spe_features.png" height="200">
 
 
 ***Comparison of Base Model Performance for Predicting LCMS Method with All Features and Selected Features***
 
-<img src="Resources/lcms_features.png" height="250">
+<img src="Resources/lcms_features.png" height="200">
 
 
 Since feature values ranged from less than 1 to greater than 700, scikit-learn's `StandardScaler` module was used to scale all features after completing the train-test split.
@@ -117,12 +119,12 @@ The tables below show a comparison of base model performance sorted from highest
 
 ***Base Model Performance for Predicting SPE Method***
 
-<img src="Resources/spe_base.png" height="250">
+<img src="Resources/spe_base.png" height="200">
 
 
 ***Base Model Performance for Predicting LCMS Method***
 
-<img src="Resources/lcms_base.png" height="250">
+<img src="Resources/lcms_base.png" height="200">
 
 
 #### Hyperparameter Tuning 
@@ -150,12 +152,12 @@ For all models, the balanced accuracy and F1 scores for the version with the bes
 
 ***Comparison of Base and Grid Search Model Performance for Predicting SPE Method***
 
-<img src="Resources/spe_grid.png" height="250">
+<img src="Resources/spe_grid.png" height="200">
 
 
 ***Comparison of Base and Grid Search Model Performance for Predicting LCMS Method***
 
-<img src="Resources/lcms_grid.png" height="250">
+<img src="Resources/lcms_grid.png" height="200">
 
 ### Final Model Selection & Performance
 
@@ -164,9 +166,14 @@ Balanced Random Forest and XGBoost algorithms both produced high-performing ML m
 #### SPE ML Model
 Although Balanced Random Forest had a slightly higher best balanced accuracy score than XGBoost for predicting SPE method , XGBoost was selected for this model due to its higher F1 score. In particular, the precision for predicting HLB (the minority class) was much higher with XGBoost than with Balanced Random Forest. The difference in recall for predicting HLB, where XGBoost performed the worst, was smaller and XGBoost still performed fairly well. Performance metrics for both models are shown below.
 
-***XGBoost                              Balanced Random Forest***
+***XGBoost Performance Metrics***
 
-<img src="Resources/spe_performance_xgb.png" width="425"/> <img src="Resources/spe_performance_brf.png" width="425"/>
+<img src="Resources/spe_performance_xgb.png"> 
+
+
+***Balanced Random Forest Performance Metrics***
+
+<img src="Resources/spe_performance_brf.png">
 
 
 Performance metrics for the selected XGBoost model are explained below. 
@@ -185,12 +192,17 @@ The default hyperparameters used for the base version of the model were used for
 
 XGBoost and Balanced Random Forest had nearly equal best balanced accuracy scores for predicting LCMS method, so XGBoost was once again selected for this model due to its higher F1 score. As with the SPE model, XGBoost had a higher precision than Balanced Random Forest for predicting the minority LCMS method class (Gemini). Performance metrics for both models are shown below. 
 
-***XGBoost                              Balanced Random Forest***
+***XGBoost Performance Metrics***
 
-<img src="Resources/lcms_performance_xgb.png" width="425"/> <img src="Resources/lcms_performance_brf.png" width="425"/>
+<img src="Resources/lcms_performance_xgb.png"> 
 
 
-Performance metrics for the model are shown and explained below. 
+***Balanced Random Forest Performance Metrics***
+
+<img src="Resources/lcms_performance_brf.png">
+
+
+Performance metrics for the selected XGBoost model are explained below.  
 - Balanced Accuracy Score: The model's LCMS method predictions for the testing data were correct **89%** of the time. 
 - Precision for Predicting Xbridge: When the method was predicted as Xbridge, it actually was Xbridge **93%** of the time.
 - Precision for Predicting Gemini: When the method was predicted as Gemini, it actually was Gemini **88%** of the time. 
@@ -199,7 +211,7 @@ Performance metrics for the model are shown and explained below.
 
 The hyperparameters for the final model are shown below.
 
-<img src="Resources/lcms_final_params.png" width="650">
+<img src="Resources/lcms_final_params.png" width="350">
 
 
 In general, XGBoost has several benefits that make it a strong choice for these models.
