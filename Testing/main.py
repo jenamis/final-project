@@ -22,10 +22,9 @@ if not os.path.exists(os.getcwd() + '/lcms_scaler.pkl'):
     
 spe_xgb_model = cwd + '/spe_xgb_model.pkl'
 spe_scaler = cwd + '/spe_scaler.pkl'
-# spe_scaler = '/Users/yycheung/Analysis project/purifAI/MachineLearning/SPE/spe_scaler1.pkl'
 lcms_xgb_model = cwd + '/lcms_xgb_model.pkl'
 lcms_scaler = cwd + '/lcms_scaler.pkl'
-# lcms_scaler = '/Users/yycheung/Analysis project/purifAI/MachineLearning/LCMS/lcms_scaler1.pkl'
+
 
 model_predictor = model_selection(spe_xgb_model, 
                             spe_scaler,
