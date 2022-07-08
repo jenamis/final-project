@@ -24,7 +24,9 @@ from tkinter.messagebox import showinfo
 import pandas as pd
 import os
 import wget
+```
 
+```python
 # Download saved model.pkl and scaler.pkl
 cwd = os.getcwd()
     
@@ -39,19 +41,24 @@ if not os.path.exists(os.getcwd() + '/lcms_xgb_model.pkl'):
     wget.download(url+ 'lcms_xgb_model.pkl')
 if not os.path.exists(os.getcwd() + '/lcms_scaler.pkl'):
     wget.download(url+ 'lcms_scaler.pkl')
+```
 
+```python
 # set up model and scaler file path    
 spe_xgb_model = cwd + '/spe_xgb_model.pkl'
 spe_scaler = cwd + '/spe_scaler.pkl'
 lcms_xgb_model = cwd + '/lcms_xgb_model.pkl'
 lcms_scaler = cwd + '/lcms_scaler.pkl'
+```
 
+```python
 # set up the model predictor by calling the model_selection function in purifAI
 model_predictor = model_selection(spe_xgb_model, 
                             spe_scaler,
                             lcms_xgb_model,
                             lcms_scaler)
 ```
+
 ```python
 # Get the input smiles 
 showinfo(title="Select SMILES List (CSV)", message="Select the list of structures' SMILES to process. NOTE: Column header must be 'SMILES'.")
@@ -110,3 +117,13 @@ showinfo(title="Save Results", message="Save a summary dataframe with prediction
 summary_with_descriptors = asksaveasfile()
 result_df.to_csv(summary_with_descriptors, index=False)
 ```
+
+The testing code above can be use direltly to perform bulk input prediction on SPE and LCMS methods. Users can also change the model and or scaler by simply changing the file paths.
+```
+# set up the file path
+spe_xgb_model = cwd + '/spe_xgb_model.pkl'
+spe_scaler = cwd + '/spe_scaler.pkl'
+lcms_xgb_model = cwd + '/lcms_xgb_model.pkl'
+lcms_scaler = cwd + '/lcms_scaler.pkl'
+```
+
