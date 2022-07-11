@@ -221,9 +221,15 @@ In general, XGBoost has several benefits that make it a strong choice for these 
 
 ## Dashboard
 
-Using a flask template, the team will create a web application that will allow users the ability to input a chemical compound in which the machine learning will predict the best SPE and LCMS method to test for purification and analysis. It will be hosted using HTML/CSS. Tableau will also be integrated to create a fully functioning and interactive dashboard that gives the users the ability to compare certain features to SPE and LCMS methods. Users will also be able to see which features have the highest importance level. 
+Using HTML/CSS to host a webpage, the team will use a flask template to create a web application that will allow users the ability to input a chemical compound in which the machine learning will predict the best SPE and LCMS method to test for purification and analysis. 
 
-[Tableau Webpage](https://public.tableau.com/views/TestingSPEandLCMSMethods/Dashboard72?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+Tableau will also be integrated to create a fully functioning and interactive dashboard that gives the users the ability to compare certain features to SPE and LCMS methods. 
+![Screen Shot 2022-07-10 at 7 50 11 PM](https://user-images.githubusercontent.com/98780937/178182201-7707ba83-b4ea-46b8-959a-d7781b7f08ec.png)
+
+Users will also be able to see which features have the highest importance level. 
+![Screen Shot 2022-07-10 at 8 18 05 PM](https://user-images.githubusercontent.com/98780937/178182399-f3e999c1-68c1-4a3d-ac19-1982b45ece5f.png)
+
+The Webpage can be access through [Here](https://github.com/teresattrann/purifAI.github.io/blob/main/index.html).
 
 ## Team Communication Protocol
 
