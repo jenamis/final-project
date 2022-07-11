@@ -229,7 +229,7 @@ Tableau will also be integrated to create a fully functioning and interactive da
 Users will also be able to see which features have the highest importance level. 
 ![Screen Shot 2022-07-10 at 8 18 05 PM](https://user-images.githubusercontent.com/98780937/178182399-f3e999c1-68c1-4a3d-ac19-1982b45ece5f.png)
 
-The Webpage can be access through [Here](https://github.com/teresattrann/purifAI.github.io/blob/main/index.html).
+The Webpage can be access through [Here](https://teresattrann.github.io/purifAI.github.io/).
 
 ## Team Communication Protocol
 
