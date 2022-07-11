@@ -40,10 +40,6 @@ The second dataset includes the status of testing for each compound and the SPE 
 
 [Here is the database diagram](https://github.com/jenamis/purifAI/blob/main/database/DBD%20Diagram.png).
 
-![DBD_Diagram](README.Resources/DBD_Diagram.png)
-
-
-
 4. **Data for SPE analysis is extracted as a merged table (`spe_analysis_df`) using SQLAlchemy and pandas. This dataframe for analysis is obtained using the code from [spe_analysis_data.ipynb](database/spe_analysis_data.ipynb).**
 
 ### Questions to Answer
