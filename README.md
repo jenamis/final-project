@@ -13,7 +13,7 @@ This project developed two machine learning (ML) models.
 The team at an automated chemistry platform that works to automate the process of making small chemical compounds to be used in research and development for medicinal purposes is seeking ML models that can be used to select the best SPE and LCMS methods to test for purification and analysis of each chemical compound in a large library of compounds. Without ML models that can effectively predict the optimal SPE and LCMS methods to use, the team must make a best guess of which methods to test based on a subset of properties of each compound’s structure (also known as molecular descriptors). This process can be time consuming and expensive, especially if the wrong SPE and/or LCMS method(s) end up being selected and testing must be repeated using other methods. Development of these two ML models has the potential to improve the time and cost efficiency of the automated chemistry platform’s process.
 
 ### Data Source
-This project utilized datasets provided by the data team at the automated chemistry platform. The first dataset listed compounds tested by the platform over the past two years and included molecular descriptors such as molecular weight, topological polar surface area (TPSA), quantitative estimate of drug-likeness (QED), among many others believed to be potentially relevant to predicting the appropriate SPE and LCMS methods to use for compound purification and analysis. These *molecular descriptors* were generated from input SMILES strings using the python library [RDKit](https://www.rdkit.org/), which provides an extensive [list of available descriptors](https://www.rdkit.org/docs/GettingStartedInPython.html#list-of-available-descriptors). The file for these calculations can be found at [chemCalculate.py](database/chemCalculate.py). 
+This project utilized datasets provided by the data team at the automated chemistry platform. The first dataset listed compounds tested by the platform over the past two years and included molecular descriptors such as molecular weight, topological polar surface area (TPSA), quantitative estimate of drug-likeness (QED), among many others believed to be potentially relevant to predicting the appropriate SPE and LCMS methods to use for compound purification and analysis. These *molecular descriptors* were generated from input SMILES strings using the Python library [RDKit](https://www.rdkit.org/), which provides an extensive [list of available descriptors](https://www.rdkit.org/docs/GettingStartedInPython.html#list-of-available-descriptors). The file for these calculations can be found at [chemCalculate.py](database/chemCalculate.py). 
 
 The second dataset included the status of testing for each compound and the SPE and LCMS methods used for each compound that had completed the purification stage. Each compound was identified by a unique structure ID, and proprietary information about the actual structure of the compound was excluded from the datasets.
 
@@ -40,11 +40,11 @@ The second dataset included the status of testing for each compound and the SPE 
 
 [Here is the database diagram](database/DBD%20Diagram.png).
 
-4. **Data for SPE analysis was extracted as a merged table (`spe_analysis_df`) using SQLAlchemy and pandas. This dataframe for analysis was obtained using the code from [spe_analysis_data.ipynb](database/spe_analysis_data.ipynb). Data for LCMS analysis (`lcms_analysis_df`) was extracted in the same way using the code from [lcms_analysis_data.ipynb](database/lcms_analysis_data.ipynb).**
+4. **Data for SPE analysis was extracted as a merged table (`spe_analysis_df`) using SQLAlchemy and pandas. This DataFrame for analysis was obtained using the code from [spe_analysis_data.ipynb](database/spe_analysis_data.ipynb). Data for LCMS analysis (`lcms_analysis_df`) was extracted in the same way using the code from [lcms_analysis_data.ipynb](database/lcms_analysis_data.ipynb).**
 
 ### Questions to Answer
 
-The questions this project sought to answer were:
+This project sought to answer the following questions:
 - Which molecular descriptors are relevant to include as features in a ML model to predict the optimal SPE method for compound purification?
 - Can a ML model be developed that has sufficiently high accuracy, precision, and sensitivity for predicting optimal SPE method for compound purification?
 - Which ML model will perform best for predicting optimal SPE method for compound purification?
@@ -74,13 +74,13 @@ Data preprocessing continued as outlined below.
    - The dropped columns contained additional outcome data from the compound testing process that may be of interest for future analysis but were extraneous to the current objective of predicting optimal SPE and LCMS methods. 
 - Duplicate rows were dropped from the DataFrame. 
    
-   **For SPE ML model development:**
-   - If a structure ID was tested multiple times with same SPE method, only one row was retained for that structure ID and SPE method combination.
-   - If a structure ID was tested successfully with both SPE methods, rows for that structure ID with each SPE method were retained. 
+ **For SPE ML model development:**
+- If a structure ID was tested multiple times with same SPE method, only one row was retained for that structure ID and SPE method combination.
+- If a structure ID was tested successfully with both SPE methods, rows for that structure ID with each SPE method were retained. 
    
-   **For LCMS ML model development:**
-   - If a structure ID was tested multiple times with same LCMS method, only one row was retained for that structure ID and LCMS method combination.
-   - If a structure ID was tested successfully with both LCMS methods, rows for that structure ID with each LCMS method were retained. 
+ **For LCMS ML model development:**
+- If a structure ID was tested multiple times with same LCMS method, only one row was retained for that structure ID and LCMS method combination.
+- If a structure ID was tested successfully with both LCMS methods, rows for that structure ID with each LCMS method were retained. 
 - Scikit-learn's `LabelEncoder` module was used to transform the SPE or LCMS method (target) from string to numerical data in some of the model testing scripts. All features were already numerical. **Note:** This preprocessing step was skipped when training the final saved models.
 
 ### Feature Engineering & Selection
@@ -113,10 +113,6 @@ Base versions of the ML algorithms and resampling methods listed above were test
 - For Balanced Random Forest, Easy Ensemble AdaBoost, and XGBoost base versions, n_estimators was set equal to 100 and all other hyperparameters were default. 
 - For LR base versions, all hyperparameters were default. 
 
-Base model testing scripts can be accessed here:
-- [SPE model testing script](machine_learning/SPE/ML_testing/spe_ML_base_model_testing_updated.ipynb)
-- [LCMS model testing script](machine_learning/LCMS/ML_testing/lcms_ML_base_model_testing_updated.ipynb)
-
 The tables below show a comparison of base model performance sorted from highest to lowest balanced accuracy score. For the model predicting SPE method, Balanced Random Forest and XGBoost had the highest balanced accuracy and weighted F1 scores. For the model predicting LCMS method, Balanced Random Forest had the highest balanced accuracy and weighted F1 scores, while LR with Cluster Centroids Undersampling and XGBoost had the second highest balanced accuracy score and weighted F1 score, respectively.
 
 ***Base Model Performance for Predicting SPE Method***
@@ -128,6 +124,10 @@ The tables below show a comparison of base model performance sorted from highest
 
 <img src="Resources/lcms_base.png" height="225">
 
+
+Base model testing scripts can be accessed here:
+- [SPE model testing script](machine_learning/SPE/ML_testing/spe_ML_base_model_testing_updated.ipynb)
+- [LCMS model testing script](machine_learning/LCMS/ML_testing/lcms_ML_base_model_testing_updated.ipynb)
 
 #### Hyperparameter Tuning 
 Hyperparameter tuning was performed for all of the ML algorithms listed above.
@@ -150,19 +150,6 @@ Hyperparameter tuning was performed for all of the ML algorithms listed above.
    - For Easy Ensemble AdaBoost: `n_estimators`
    - For LR: `C`, `penalty`
 
-Hyperparameter tuning scripts for **SPE models** can be accessed here:
-- [Balanced Random Forest](machine_learning/SPE/ML_testing/spe_balanced_random_forest_param_search_updated.ipynb)
-- [XGBoost](machine_learning/SPE/ML_testing/Grid%20search%20on%20XGBoost_spe.ipynb)
-- [Easy Ensemble AdaBoost](machine_learning/SPE/ML_testing/Grid%20search%20on%20Easy%20Ensemble%20AdaBoost%20Classifier_spe.ipynb)
-- [LR](machine_learning/SPE/ML_testing/Grid%20search%20on%20Logistic Regression_spe.ipynb)
-
-Hyperparameter tuning scripts for **LCMS models** can be accessed here:
-- [Balanced Random Forest](machine_learning/LCMS/ML_testing/lcms_balanced_random_forest_param_search_updated.ipynb)
-- [XGBoost](machine_learning/LCMS/ML_testing/Grid%20search%20on%20XGBoost_lcms.ipynb)
-- [Easy Ensemble AdaBoost](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Easy%20Ensemble%20AdaBoost%20Classifier_lcms.ipynb)
-- [LR](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Logistic Regression_lcms.ipynb)
-
-
 For all models, the balanced accuracy and weighted F1 scores for the version with the best identified hyperparameter values were compared with the scores for the base version. The tables below show these comparisons, and are sorted from highest to lowest balanced accuracy score after hyperparameter tuning. For predicting SPE method, Balanced Random Forest had the highest balanced accuracy score after hyperparameter tuning, but the XGBoost base model still had the highest weighted F1 score. For predicting LCMS method, XGBoost had the highest balanced accuracy score and weighted F1 score after hyperparameter tuning. 
 
 ***Comparison of Base and Grid Search Model Performance for Predicting SPE Method***
@@ -174,6 +161,18 @@ For all models, the balanced accuracy and weighted F1 scores for the version wit
 
 <img src="Resources/lcms_grid.png" height="225">
 
+
+Hyperparameter tuning scripts for **SPE models** can be accessed here:
+- [Balanced Random Forest](machine_learning/SPE/ML_testing/spe_balanced_random_forest_param_search_updated.ipynb)
+- [XGBoost](machine_learning/SPE/ML_testing/Grid%20search%20on%20XGBoost_spe.ipynb)
+- [Easy Ensemble AdaBoost](machine_learning/SPE/ML_testing/Grid%20search%20on%20Easy%20Ensemble%20AdaBoost%20Classifier_spe.ipynb)
+- [LR](machine_learning/SPE/ML_testing/Grid%20search%20on%20Logistic%20Regression_spe.ipynb)
+
+Hyperparameter tuning scripts for **LCMS models** can be accessed here:
+- [Balanced Random Forest](machine_learning/LCMS/ML_testing/lcms_balanced_random_forest_param_search_updated.ipynb)
+- [XGBoost](machine_learning/LCMS/ML_testing/Grid%20search%20on%20XGBoost_lcms.ipynb)
+- [Easy Ensemble AdaBoost](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Easy%20Ensemble%20AdaBoost%20Classifier_lcms.ipynb)
+- [LR](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Logistic%20Regression_lcms.ipynb)
 
 ### Final Model Selection & Performance
 
@@ -251,13 +250,13 @@ Users can also see the ranking of feature importances for the final SPE and LCMS
 ![Screen Shot 2022-07-10 at 8 18 05 PM](https://user-images.githubusercontent.com/98780937/178182399-f3e999c1-68c1-4a3d-ac19-1982b45ece5f.png)
 
 
-Flask and Dash were used to create a web application that allows users to input a SMILES string or list of SMILES strings and predict the optimal SPE and LCMS methods to test for purification and analysis using the final ML models developed through this project.
+Flask and Dash were used to create a web application that allows users to input a SMILES string or list of SMILES strings and predict the optimal SPE and LCMS methods using the final ML models developed through this project.
 
 The website can be accessed  [here](https://teresattrann.github.io/purifAI.github.io/).
 
 ## purifAI Python Package
 
-The **purifAI** package was designed to use for bulk input prediction of which SPE and LCMS methods will be optimal for a particular chemical compound. The package uses the final XGBoost models developed through this project to generate these predictions.
+The **purifAI** package was designed to use for bulk input prediction of optimal SPE and LCMS methods for chemical compounds. The package uses the final XGBoost ML models developed through this project to generate these predictions.
 
 ### Installation
 
@@ -267,7 +266,7 @@ pip install purifAI
 
 ### Usage
 
-The user can input a CSV file of SMILES strings and the first function `calculate_descriptors(self, smiles, ipc_avg=False)` will calculate from these SMILES the molecular descriptors needed as features to be put into the prediction model. The user can then call `RunSPEPrediction(self, smiles)` for SPE method predictions and `RunLCMSPrediction(self, smiles)` for LCMS method predictions. 
+The user can input a CSV file of SMILES strings and the first function, `calculate_descriptors(self, smiles, ipc_avg=False)`, will calculate from these SMILES the molecular descriptors to be put into the prediction model as features. The user can then call `RunSPEPrediction(self, smiles)` for SPE method predictions and `RunLCMSPrediction(self, smiles)` for LCMS method predictions. 
 
 ```python
 # import dependencies
@@ -400,7 +399,7 @@ A highly predictive ML model implemented in this way would improve the automated
 Some readily acknowledged limitations of these (and other) ML models could impact the breadth of their impact.
 
 - The model will only be able to predict accurately for compound structures that are similar enough to the training set. In the confinements of targeting small compound drug targets, these are generally all within a certain scope of alikeness.
-  - As compounds evolve with the growing knowledge of chemistry and drug discovery as time passes, this (or any) model will need to be reoptimized with new and additional data to retain accuracy.
+- As compounds evolve with the growing knowledge of chemistry and drug discovery as time passes, this (or any) model will need to be reoptimized with new and additional data to retain accuracy.
 - Only when the predictive model is correctly and consistently indicating successful methods over many different types of samples .
 
 ### Expansions & Future Endeavours 
