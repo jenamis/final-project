@@ -119,7 +119,8 @@ result_df.to_csv(summary_with_descriptors, index=False)
 ```
 
 The testing code above can be use direltly to perform bulk input prediction on SPE and LCMS methods. Users can also change the model and or scaler by simply changing the file paths.
-```
+
+```python
 # set up the file path
 spe_xgb_model = cwd + '/spe_xgb_model.pkl'
 spe_scaler = cwd + '/spe_scaler.pkl'
