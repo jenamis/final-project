@@ -364,17 +364,6 @@ lcms_xgb_model = cwd + '/lcms_xgb_model.pkl'
 lcms_scaler = cwd + '/lcms_scaler.pkl'
 ```
 
-
-
-## Team Communication Protocol
-
-The project team will use the following protocol for communicating about the project. 
-- A dedicated Slack channel that includes only team members will be used as the primary method for communication about the project.
-- Slack messages directed at a specific team member or members will include a mention for the team member(s).
-- All team members will have Slack notifications for the channel turned on so they will be alerted to new project messages. 
-- All team members will be expected to respond to Slack messages within 24 hours. If no response is received within 24 hours, communication will be re-sent via text message. 
-- Brief team meetings will be conducted via Google Meet on Mondays, Wednesdays, and Fridays at 1pm and Tuesdays, Thursdays, and Sundays at 9pm. 
-
 ## Conclusion
 
 All-in-all, the resulting scores of these trained models seem to encourage an optimistic implementation on real structure predictions. This will hopefully begin to guide automated decisions on purification and analytical method for compounds passing through the robotics platform.
@@ -406,3 +395,6 @@ My immediate next development to this tool would be to develop a way of measurin
 Additionally, I would expand this predictive work to encompass more fields of data relevent to measuring a given compound’s success throught the platform. I would like do this a implement some deep learning strategies to play with models using a greater coverage of  the relevant data. In the scope of this work, I piqued an interest (without the time to divulge) in deep learning towards the resolution of chemical challenges. I hope to implement prepackaged tools like [deepchem](https://deepchem.io/) and [chainer-chemistry](https://github.com/chainer/chainer-chemistry) to aid those investigations.
 
 Should this project’s work prove successful for predicting purification outcomes by method, I will likely try to expand these goals to the realm of automated synthesis and retrosynthetic AI (at least explorationally).
+
+----------------------------------------------------------------
+### [Google slide](https://docs.google.com/presentation/d/1imPsfB5MEK9zgKy1yReFI4jfK9sjPSk96bwV_MYEqJc/edit?usp=sharing)
