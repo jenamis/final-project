@@ -397,4 +397,4 @@ Additionally, I would expand this predictive work to encompass more fields of da
 Should this project’s work prove successful for predicting purification outcomes by method, I will likely try to expand these goals to the realm of automated synthesis and retrosynthetic AI (at least explorationally).
 
 ----------------------------------------------------------------
-### [Google slide](https://docs.google.com/presentation/d/1imPsfB5MEK9zgKy1yReFI4jfK9sjPSk96bwV_MYEqJc/edit?usp=sharing)
+### [Google Slides](https://docs.google.com/presentation/d/1imPsfB5MEK9zgKy1yReFI4jfK9sjPSk96bwV_MYEqJc/edit?usp=sharing)
