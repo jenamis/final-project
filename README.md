@@ -74,11 +74,11 @@ Data preprocessing continued as outlined below.
    - The dropped columns contained additional outcome data from the compound testing process that may be of interest for future analysis but were extraneous to the current objective of predicting optimal SPE and LCMS methods. 
 - Duplicate rows were dropped from the DataFrame. 
    
- **For SPE ML model development:**
+**For SPE ML model development:**
 - If a structure ID was tested multiple times with same SPE method, only one row was retained for that structure ID and SPE method combination.
 - If a structure ID was tested successfully with both SPE methods, rows for that structure ID with each SPE method were retained. 
    
- **For LCMS ML model development:**
+**For LCMS ML model development:**
 - If a structure ID was tested multiple times with same LCMS method, only one row was retained for that structure ID and LCMS method combination.
 - If a structure ID was tested successfully with both LCMS methods, rows for that structure ID with each LCMS method were retained. 
 - Scikit-learn's `LabelEncoder` module was used to transform the SPE or LCMS method (target) from string to numerical data in some of the model testing scripts. All features were already numerical. **Note:** This preprocessing step was skipped when training the final saved models.
@@ -232,7 +232,6 @@ The hyperparameters for the final model are shown below.
 In general, XGBoost has several benefits that make it a strong choice for these models.
 - It can perform well with imbalanced classes like SPE method and LCMS method.
 - It can run efficiently with large datasets. 
-- **WHAT ELSE TO ADD?**
 
 A limitation of XGBoost is that, as a boosting algorithm, it can be more prone to overfitting.
 
@@ -242,12 +241,12 @@ Using HTML/CSS, a website was created with two main components: a dashboard and 
 
 Tableau was integrated to create a fully functioning and interactive dashboard that gives users the ability to explore the SPE and LCMS methods by feature (chemical descriptor) for the structures in the dataset. 
 
-![Screen Shot 2022-07-10 at 7 50 11 PM](https://user-images.githubusercontent.com/98780937/178182201-7707ba83-b4ea-46b8-959a-d7781b7f08ec.png)
+![Screen Shot 2022-07-10 at 7 50 11 PM](Resources/method_vs_features.png)
 
 
 Users can also see the ranking of feature importances for the final SPE and LCMS ML models. 
 
-![Screen Shot 2022-07-10 at 8 18 05 PM](https://user-images.githubusercontent.com/98780937/178182399-f3e999c1-68c1-4a3d-ac19-1982b45ece5f.png)
+![Screen Shot 2022-07-10 at 8 18 05 PM](Resources/feature_importances.png)
 
 
 Flask and Dash were used to create a web application that allows users to input a SMILES string or list of SMILES strings and predict the optimal SPE and LCMS methods using the final ML models developed through this project.
@@ -388,7 +387,6 @@ All-in-all, the scores of the final ML models seem to encourage an optimistic im
 ### Positive Outcomes
 
 A highly predictive ML model implemented in this way would improve the automated chemistry platform by:
-
 - Increasing success quantity metrics and minimizing failed sample counts (better fitted methods on a per-sample-basis will inherently improve purity and sample recovery results);
 - Limiting the amount of time and resources taken by compound samples needing to be re-tested through the platform;
 - Eventually being able to highlight what types of compound structures are inevitably unsuited for the automated platform, thus indicating for which structures new methods should be developed; and
@@ -397,20 +395,19 @@ A highly predictive ML model implemented in this way would improve the automated
 ### Potential Limitations
 
 Some readily acknowledged limitations of these (and other) ML models could impact the breadth of their impact.
-
 - The model will only be able to predict accurately for compound structures that are similar enough to the training set. In the confinements of targeting small compound drug targets, these are generally all within a certain scope of alikeness.
 - As compounds evolve with the growing knowledge of chemistry and drug discovery as time passes, this (or any) model will need to be reoptimized with new and additional data to retain accuracy.
-- Only when the predictive model is correctly and consistently indicating successful methods over many different types of samples .
+- Only when the predictive model is correctly and consistently indicating successful methods over many different types of samples can this model be determined helpful for predicting optimal methods accurately.
 
 ### Expansions & Future Endeavours 
 
 To address the issue of structural likeness between input structures of the model and those that it was trained upon is a relevant, but complex question.
 
-An immediate next development to this tool would be to develop a way of measuring chemico-statistical likeness of a subset against a larger set. This would require analyzing the array of molecular descriptors of each compound in a set and extract some sort of statistical relevance against another array of arrays. This would also assume that the selected descriptors substantially cover those parameters by which structures “differ”.
+An immediate next development to this tool would be to develop a way of measuring chemico-statistical likeness of an input set of chemical compounds compared with the set of compounds used to train and test the ML models. This analysis would require assessing for a statistical difference between the array of molecular descriptors of compounds in the input set and the array of descriptors for the training set.
 
-Additionally, this predictive work could be expanded to encompass more fields of data relevent to measuring a given compound’s success throught the automated platform. This could be done by implementing some deep learning strategies to play with models using a greater coverage of the relevant data. In the scope of this work, I piqued an interest (without the time to divulge) in deep learning towards the resolution of chemical challenges. I hope to implement prepackaged tools like [deepchem](https://deepchem.io/) and [chainer-chemistry](https://github.com/chainer/chainer-chemistry) to aid those investigations.
+Additionally, this predictive work could be expanded to encompass more fields of data relevent to measuring a given compound’s success throught the automated platform. This could be done by implementing some deep learning strategies to play with models using a greater coverage of the relevant data. In the scope of this work, an additional model could be implemented using deep learning towards the resolution of chemical challenges. Common prepackaged tools, like [deepchem](https://deepchem.io/) or [chainer-chemistry](https://github.com/chainer/chainer-chemistry), may aid those investigations and prove useful specifically for the unique challenges that chemistry provides.
 
-Should this project’s work prove successful for predicting purification methods, I will likely try to expand these goals to the realm of automated synthesis and retrosynthetic AI (at least explorationally).
+Should this project’s work prove successful for predicting purification methods, it may prove useful to expand these tactics to the realm of automated synthesis and retrosynthetic AI (at least explorationally).
 
 ----------------------------------------------------------------
 ### [Presentation Slides](https://docs.google.com/presentation/d/1imPsfB5MEK9zgKy1yReFI4jfK9sjPSk96bwV_MYEqJc/edit?usp=sharing)
