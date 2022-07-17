@@ -111,9 +111,9 @@ Two stages of model testing and training were performed for both SPE model devel
 #### Initial Testing
 Base versions of the ML algorithms and resampling methods listed above were tested and balanced accuracy scores and weighted F1 scores were compared. 
 - For Balanced Random Forest, Easy Ensemble AdaBoost, and XGBoost base versions, n_estimators was set equal to 100 and all other hyperparameters were default. 
-- For LR base versions, all hyperparameters were default. 
+- For Logistic Regression base versions, all hyperparameters were default. 
 
-The tables below show a comparison of base model performance sorted from highest to lowest balanced accuracy score. For the model predicting SPE method, Balanced Random Forest and XGBoost had the highest balanced accuracy and weighted F1 scores. For the model predicting LCMS method, Balanced Random Forest had the highest balanced accuracy and weighted F1 scores, while LR with Cluster Centroids Undersampling and XGBoost had the second highest balanced accuracy score and weighted F1 score, respectively.
+The tables below show a comparison of base model performance sorted from highest to lowest balanced accuracy score. For the model predicting SPE method, Balanced Random Forest and XGBoost had the highest balanced accuracy and weighted F1 scores. For the model predicting LCMS method, Balanced Random Forest had the highest balanced accuracy and weighted F1 scores, while Logistic Regression with Cluster Centroids Undersampling and XGBoost had the second highest balanced accuracy score and weighted F1 score, respectively.
 
 ***Base Model Performance for Predicting SPE Method***
 
@@ -146,9 +146,9 @@ Hyperparameter tuning was performed for all of the ML algorithms listed above.
    - `learning_rate`
    - `max_depth`
    - `min_child_weight`
-- Since the Easy Ensemble AdaBoost and LR base models did not perform as well overall, less attention was given to their hyperparameter tuning and `GridSearchCV` was used to search for the best values for only a small subset of hyperparameters. 
+- Since the Easy Ensemble AdaBoost and Logistic Regression base models did not perform as well overall, less attention was given to their hyperparameter tuning and `GridSearchCV` was used to search for the best values for only a small subset of hyperparameters. 
    - For Easy Ensemble AdaBoost: `n_estimators`
-   - For LR: `C`, `penalty`
+   - For Logistic Regression: `C`, `penalty`
 
 For all models, the balanced accuracy and weighted F1 scores for the version with the best identified hyperparameter values were compared with the scores for the base version. The tables below show these comparisons, and are sorted from highest to lowest balanced accuracy score after hyperparameter tuning. For predicting SPE method, Balanced Random Forest had the highest balanced accuracy score after hyperparameter tuning, but the XGBoost base model still had the highest weighted F1 score. For predicting LCMS method, XGBoost had the highest balanced accuracy score and weighted F1 score after hyperparameter tuning. 
 
@@ -166,13 +166,13 @@ Hyperparameter tuning scripts for **SPE models** can be accessed here:
 - [Balanced Random Forest](machine_learning/SPE/ML_testing/spe_balanced_random_forest_param_search_updated.ipynb)
 - [XGBoost](machine_learning/SPE/ML_testing/Grid%20search%20on%20XGBoost_spe.ipynb)
 - [Easy Ensemble AdaBoost](machine_learning/SPE/ML_testing/Grid%20search%20on%20Easy%20Ensemble%20AdaBoost%20Classifier_spe.ipynb)
-- [LR](machine_learning/SPE/ML_testing/Grid%20search%20on%20Logistic%20Regression_spe.ipynb)
+- [Logistic Regression](machine_learning/SPE/ML_testing/Grid%20search%20on%20Logistic%20Regression_spe.ipynb)
 
 Hyperparameter tuning scripts for **LCMS models** can be accessed here:
 - [Balanced Random Forest](machine_learning/LCMS/ML_testing/lcms_balanced_random_forest_param_search_updated.ipynb)
 - [XGBoost](machine_learning/LCMS/ML_testing/Grid%20search%20on%20XGBoost_lcms.ipynb)
 - [Easy Ensemble AdaBoost](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Easy%20Ensemble%20AdaBoost%20Classifier_lcms.ipynb)
-- [LR](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Logistic%20Regression_lcms.ipynb)
+- [Logistic Regression](machine_learning/LCMS/ML_testing/Grid%20search%20on%20Logistic%20Regression_lcms.ipynb)
 
 ### Final Model Selection & Performance
 
