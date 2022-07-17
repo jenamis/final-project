@@ -257,6 +257,8 @@ Heroku was used to deploy the website, but the method prediction application usi
 
 ![enter_smiles](Resources/enter_smiles.png)
 
+The website can be accessed [here](https://purifai.herokuapp.com/).
+
 Click here for a [demonstration](https://youtu.be/CiDAFwbB5JU) of the dashboard.
 
 ## purifAI Python Package
