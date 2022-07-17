@@ -251,11 +251,13 @@ Users are able see the ranking of feature importances for the final SPE and LCMS
 
 ![feature_importances](Resources/feature_importances.png)
 
-Flask and Dash was used to create a web application that allows users to input a SMILES string or list of SMILES strings and predict the optimal SPE and LCMS methods using the final ML models developed through this project. 
+Flask and Dash were used to create a web application that allows users to input a SMILES string and predict the optimal SPE and LCMS methods using the final ML models developed through this project. 
+
+Heroku was used to deploy the website, but the method prediction application using Dash only functions when run through a local host.
 
 ![enter_smiles](Resources/enter_smiles.png)
 
-Click here for a [demonstration]() of the dashboard.
+Click here for a [demonstration](https://youtu.be/CiDAFwbB5JU) of the dashboard.
 
 ## purifAI Python Package
 
