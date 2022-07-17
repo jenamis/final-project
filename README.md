@@ -239,11 +239,11 @@ A limitation of XGBoost is that, as a boosting algorithm, it can be more prone t
 
 Using HTML/CSS, a website was created with two main components: a dashboard and method prediction application.  
 
-The dashboard included the performance metrics for our final SPE and LCMS models, both of which are using XGBoost. 
+Tableau was integrated to create a fully functioning and interactive dashboard. The dashboard includes the performance metrics for our final SPE and LCMS models, both of which used XGBoost. 
 
 ![performance_metrics_dashboard](Resources/performance_metrics_dashboard.png)
 
-Tableau was integrated to create a fully functioning and interactive dashboard that gives users the ability to explore the SPE and LCMS methods by feature (chemical descriptor) for the structures in the dataset. 
+The dashboard also gives users the ability to explore the SPE and LCMS methods by feature (chemical descriptor) for the structures in the dataset. 
 
 ![method_vs_features](Resources/method_vs_features.png)
 
@@ -255,7 +255,7 @@ Flask and Dash was used to create a web application that allows users to input a
 
 ![enter_smiles](Resources/enter_smiles.png)
 
-The website can be accessed [here](https://purifai.herokuapp.com/).
+Click here for a [demonstration]() of the dashboard.
 
 ## purifAI Python Package
 
@@ -383,6 +383,7 @@ spe_scaler = cwd + '/spe_scaler.pkl'
 lcms_xgb_model = cwd + '/lcms_xgb_model.pkl'
 lcms_scaler = cwd + '/lcms_scaler.pkl'
 ```
+Click here for a [demonstration](https://www.youtube.com/watch?v=b7e8zEA0pMY&t=4s) of the purifAI Python package.
 
 ## Conclusion
 
